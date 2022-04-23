@@ -19,8 +19,9 @@ class LinkedList:
         while current:
             output += '{ ' + current.value + ' }' + ' -> '
             current = current.next
-
+        print(output + null)
         return output + null
+
 
     def includes(self, target_value):
         current = self.head
@@ -41,6 +42,8 @@ class Node:
 class TargetError:
     pass
 
-# linked = LinkedList()
-# linked.insert("apple")
-# linked.insert("orange")
+
+
+
+
+

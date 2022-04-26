@@ -19,8 +19,8 @@ class LinkedList:
         while current:
             output += '{ ' + current.value + ' }' + ' -> '
             current = current.next
+        print(output + null)
         return output + null
-
 
     def includes(self, target_value):
         current = self.head
@@ -38,18 +38,31 @@ class LinkedList:
             maybe_head = maybe_head.next
         maybe_head.next = new
 
-    def insert_after(self, target_node_value, data):
-        new = Node(data)
-        if self.head is None:
-            return 'nope'
+    def insert_before(self, target_value, new_data):
         current = self.head
+        if self.includes(target_value) is False:
+            raise TargetError
 
         while current:
+            if current.value == target_value:
+                self.insert(new_data)
+                break
+            if current.next.value == target_value:
+                current.next = Node(new_data, current.next)
+                break
 
-            if current.value == target_node_value:
-                current.next = new
+
+    def insert_after(self, target_value, new_data):
+        if self.includes(target_value) is False:
+            raise TargetError
+
+        current = self.head
+        while current:
+            if current.value == target_value:
+                current.next = Node(new_data, current.next)
                 break
             current = current.next
+
 
 class Node:
     def __init__(self, value, next=None):
@@ -57,18 +70,5 @@ class Node:
         self.next = next
 
 
-class TargetError:
+class TargetError(Exception):
     pass
-
-
-linked_list = LinkedList()
-
-linked_list.insert("apple")
-
-linked_list.insert("banana")
-
-linked_list.insert_after("banana", "cucumber")
-
-
-
-

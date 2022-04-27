@@ -71,23 +71,14 @@ class LinkedList:
         b = self.head
         while k > 0:
             a = a.next
-            
             k -= 1
+            if a is None and k >= 0:
+                raise TargetError
         while a.next is not None:
-            # print("second loop a:",a.value)
-            # print("second loop b:",b.value)
             a = a.next
             b = b.next
         return b.value
 
-    # def ll_length(self, ll):
-    #     ll = ll.self
-    #     count = 0
-    #     while ll:
-    #         count +=1
-    #         ll=ll.next
-    #     print(count)
-    #     return count
 
 class Node:
     def __init__(self, value, next=None):
@@ -98,9 +89,9 @@ class Node:
 class TargetError(Exception):
     pass
 
-linked_list = LinkedList()
-values = ["apples", "bananas", "cucumbers","1", "2", "3"]
-for value in reversed(values):
-    linked_list.insert(value)
-linked_list.__str__()
-print(linked_list.kth_from_end(7))
+# linked_list = LinkedList()
+# values = ["apples", "bananas", "cucumbers","1", "2", "3"]
+# for value in reversed(values):
+#     linked_list.insert(value)
+# linked_list.__str__()
+# print(linked_list.kth_from_end(6))

@@ -22,6 +22,9 @@ To run your tests
 
 - Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
 
-Table of Contents
 
-[linked-list-insertions](python/docs/linked_list_insertions/README.md)
+
+### Table of Contents
+
+[linked list insertion](python/docs/linked_list_insertions/README.md)
+

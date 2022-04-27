@@ -15,7 +15,7 @@ def test_append():
     assert str(linked_list) == "{ banana } -> { apple } -> { cucumber } -> NULL"
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_insert_before():
     linked_list = LinkedList()
 
@@ -27,8 +27,21 @@ def test_insert_before():
 
     assert str(linked_list) == "{ banana } -> { cucumber } -> { apple } -> NULL"
 
+# @pytest.mark.skip("TODO")
+def test_insert_before():
+    linked_list = LinkedList()
 
-@pytest.mark.skip("TODO")
+    linked_list.insert("orange")
+
+    linked_list.insert("apple")
+
+    linked_list.insert("banana")
+
+    linked_list.insert_before("orange", "cucumber")
+
+    assert str(linked_list) == "{ banana } -> { apple } -> { cucumber } -> { orange } -> NULL"
+
+# @pytest.mark.skip("TODO")
 def test_insert_before_first():
     linked_list = LinkedList()
 
@@ -52,7 +65,7 @@ def test_insert_after():
     assert str(linked_list) == "{ banana } -> { cucumber } -> { apple } -> NULL"
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_insert_before_empty():
     linked_list = LinkedList()
 
@@ -60,7 +73,7 @@ def test_insert_before_empty():
         linked_list.insert_before("radish", "zucchinni")
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_insert_before_missing():
     linked_list = LinkedList()
 
@@ -70,7 +83,7 @@ def test_insert_before_missing():
         linked_list.insert_before("radish", "zucchinni")
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_insert_after_empty():
     linked_list = LinkedList()
 
@@ -78,7 +91,7 @@ def test_insert_after_empty():
         linked_list.insert_after("radish", "zucchinni")
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_insert_after_missing():
     linked_list = LinkedList()
 

@@ -39,3 +39,5 @@ append() - O(N)
 insert_beforeO(N)
 
 insert_afterO(N)
+
+![whiteboard](linked_list_insertions.JPG)

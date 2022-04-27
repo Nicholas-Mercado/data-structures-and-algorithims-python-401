@@ -28,3 +28,5 @@ To run your tests
 
 [linked list insertion](python/docs/linked_list_insertions/README.md)
 
+[linked list kth](python/docs/linked_list_kth/README.md)
+

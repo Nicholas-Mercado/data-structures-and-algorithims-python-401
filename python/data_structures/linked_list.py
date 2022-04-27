@@ -50,7 +50,8 @@ class LinkedList:
             if current.next.value == target_value:
                 current.next = Node(new_data, current.next)
                 break
-
+            else:
+                current = current.next
 
     def insert_after(self, target_value, new_data):
         if self.includes(target_value) is False:

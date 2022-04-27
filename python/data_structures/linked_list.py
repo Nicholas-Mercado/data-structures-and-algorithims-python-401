@@ -65,20 +65,30 @@ class LinkedList:
             current = current.next
 
     def kth_from_end(self, k):
+        if k < 0:
+            raise TargetError
         a = self.head
         b = self.head
-
         while k > 0:
             a = a.next
-            print("first loop",a.value)
-            print(k)
+            
             k -= 1
-        while a is not None:
-            print("second loop a:",a.value)
-            print("second loop b:",b.value)
+        while a.next is not None:
+            # print("second loop a:",a.value)
+            # print("second loop b:",b.value)
             a = a.next
             b = b.next
-        return b
+        return b.value
+
+    # def ll_length(self, ll):
+    #     ll = ll.self
+    #     count = 0
+    #     while ll:
+    #         count +=1
+    #         ll=ll.next
+    #     print(count)
+    #     return count
+
 class Node:
     def __init__(self, value, next=None):
         self.value = value
@@ -93,4 +103,4 @@ values = ["apples", "bananas", "cucumbers","1", "2", "3"]
 for value in reversed(values):
     linked_list.insert(value)
 linked_list.__str__()
-linked_list.kth_from_end(1)
+print(linked_list.kth_from_end(7))

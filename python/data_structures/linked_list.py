@@ -67,15 +67,18 @@ class LinkedList:
     def kth_from_end(self, k):
         a = self.head
         b = self.head
-        current = self.head
-        while current:
+
+        while k > 0:
             a = a.next
+            print("first loop",a.value)
+            print(k)
             k -= 1
-        while a is not "Null":
+        while a is not None:
+            print("second loop a:",a.value)
+            print("second loop b:",b.value)
             a = a.next
             b = b.next
-        return b.value
-
+            print(b.value)
 class Node:
     def __init__(self, value, next=None):
         self.value = value
@@ -85,9 +88,9 @@ class Node:
 class TargetError(Exception):
     pass
 
-# linked_list = LinkedList()
-# values = ["apples", "bananas", "cucumbers"]
-# for value in reversed(values):
-#     linked_list.insert(value)
-# linked_list.__str__()
-# linked_list.kth_from_end(4)
+linked_list = LinkedList()
+values = ["apples", "bananas", "cucumbers","1", "2", "3"]
+for value in reversed(values):
+    linked_list.insert(value)
+linked_list.__str__()
+linked_list.kth_from_end(1)

@@ -78,7 +78,7 @@ class LinkedList:
             print("second loop b:",b.value)
             a = a.next
             b = b.next
-            print(b.value)
+        return b
 class Node:
     def __init__(self, value, next=None):
         self.value = value

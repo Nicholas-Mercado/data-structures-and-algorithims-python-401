@@ -64,6 +64,16 @@ class LinkedList:
                 break
             current = current.next
 
+    def kth_from_end(self, k):
+        a = self.head
+        b = self.head
+        while k:
+            a = a.next
+            k -= 1
+        while a:
+            a = a.next
+            b = b.next
+        return b.value
 
 class Node:
     def __init__(self, value, next=None):

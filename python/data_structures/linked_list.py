@@ -20,7 +20,7 @@ class LinkedList:
         current = self.head
         output = ''
         while current:
-            output += '{ ' + current.value + ' }' + ' -> '
+            output += '{ ' + str(current.value) + ' }' + ' -> '
             current = current.next
         print(output + null)
         return output + null

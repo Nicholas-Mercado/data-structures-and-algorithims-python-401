@@ -6,9 +6,12 @@ class LinkedList:
 
     def __init__(self):
         self.head = None
+        # self.tail = None
 
     def insert(self, value):
-        self.head = Node(value, self.head)
+        current = self.head
+        self.head = Node(value, current)
+
 
     def __str__(self):
         null = 'NULL'
@@ -31,12 +34,18 @@ class LinkedList:
             current = current.next
         return False
 
+
     def append(self, data):
         new = Node(data)
-        maybe_head = self.head
-        while maybe_head.next is not None:
-            maybe_head = maybe_head.next
-        maybe_head.next = new
+        current = self.head
+        if current is None:
+            current = new
+            return
+        else:
+            while current.next is not None:
+                current = current.next
+            current.next = new
+
 
     def insert_before(self, target_value, new_data):
         current = self.head

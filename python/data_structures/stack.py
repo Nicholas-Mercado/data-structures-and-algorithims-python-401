@@ -18,3 +18,9 @@ class Stack:
         self.top = self.top.next
 
         return old.value
+
+    def is_empty(self):
+        return self.top is None
+
+    def peek(self):
+        return self.top.value

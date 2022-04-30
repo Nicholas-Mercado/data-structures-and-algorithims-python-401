@@ -73,8 +73,22 @@ def test_pop_until_empty():
     expected = True
     assert actual == expected
 
+def test_if_is_empty_is_false():
+    s = Stack()
+    s.push("apple")
+    actual = s.is_empty()
+    expected = False
+    assert actual == expected
 
-@pytest.mark.skip("TODO")
+def test_if_is_empty_is_false_2():
+    s = Stack()
+    s.push("apple")
+    s.pop()
+    actual = s.is_empty()
+    expected = True
+    assert actual == expected
+
+# @pytest.mark.skip("TODO")
 def test_peek():
     s = Stack()
     s.push("apple")
@@ -84,7 +98,7 @@ def test_peek():
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_peek_empty():
     s = Stack()
     with pytest.raises(InvalidOperationError) as e:

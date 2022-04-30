@@ -35,7 +35,7 @@ def test_push_onto_full_check_stack():
     expected = "banana"
     assert actual == expected
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_pop_single():
     s = Stack()
     s.push("apple")
@@ -44,7 +44,7 @@ def test_pop_single():
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_pop_some():
     s = Stack()
 
@@ -60,7 +60,7 @@ def test_pop_some():
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_pop_until_empty():
     s = Stack()
     s.push("apple")

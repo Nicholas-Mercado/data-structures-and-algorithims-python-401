@@ -99,7 +99,16 @@ def test_is_empty():
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+def test_is_empty_works():
+    q = Queue()
+    q.enqueue("apples")
+    q.enqueue("bananas")
+    actual = q.is_empty()
+    expected = False
+    assert actual == expected
+
+
+# @pytest.mark.skip("TODO")
 def test_exhausted():
     q = Queue()
     q.enqueue("apple")

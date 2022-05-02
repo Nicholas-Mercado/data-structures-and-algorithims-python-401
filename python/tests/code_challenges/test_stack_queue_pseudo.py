@@ -6,7 +6,7 @@ def test_exists():
     assert PseudoQueue
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_enqueue_one():
     pq = PseudoQueue()
     pq.enqueue("apples")
@@ -15,7 +15,7 @@ def test_enqueue_one():
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_enqueue_two():
     pq = PseudoQueue()
     pq.enqueue("apples")
@@ -30,7 +30,7 @@ def test_enqueue_two():
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_enqueue_dequeue_enqueue_dequeue():
     pq = PseudoQueue()
     pq.enqueue("apples")
@@ -46,3 +46,23 @@ def test_enqueue_dequeue_enqueue_dequeue():
     expected = ["bananas", "cucumbers", "dates"]
 
     assert actual == expected
+
+
+def test_enqueue_dequeue_dequeue_enqueue_dequeue():
+    pq = PseudoQueue()
+    pq.enqueue("apples")
+    pq.enqueue("bananas")
+
+    pq.dequeue()
+    pq.dequeue()
+
+    pq.enqueue("cucumbers")
+    pq.enqueue("dates")
+
+    actual = [pq.dequeue(), pq.dequeue()]
+
+    expected = ["cucumbers", "dates"]
+
+    assert actual == expected
+
+

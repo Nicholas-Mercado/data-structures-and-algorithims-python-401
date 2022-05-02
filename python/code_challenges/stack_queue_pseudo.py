@@ -10,7 +10,9 @@ class PseudoQueue:
         self.inbox.push(value)
 
     def dequeue(self):
-        x = self.inbox.pop()
-        self.outbox.push(x)
+        
+        while self.inbox.top:
+            x = self.inbox.pop()
+            self.outbox.push(x)
 
         return self.outbox.pop()

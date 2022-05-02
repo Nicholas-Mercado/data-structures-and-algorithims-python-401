@@ -30,3 +30,4 @@ To run your tests
 
 [linked list kth](python/docs/linked_list_kth/README.md)
 
+[stack_queue_pseudo](python/docs/stack_queue_pseudo/README.md)

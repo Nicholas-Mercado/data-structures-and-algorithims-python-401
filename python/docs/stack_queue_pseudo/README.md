@@ -1,11 +1,12 @@
 # Challenge Summary
-<!-- Description of the challenge -->
+This challenge was to create a undercover Stack inside a Queue.
 
 ## Whiteboard Process
-<!-- Embedded whiteboard image -->
+![whiteboard](stack_queue_psudeo.JPG)
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+First I checked whether any valuse was in my outbox. If not I would pop my inbox into my outbox.
 
-## Solution
-<!-- Show how to run your code, and examples of it in action -->
+This gave me a O(N) because the loop depends on how many items enter the list.
+
+

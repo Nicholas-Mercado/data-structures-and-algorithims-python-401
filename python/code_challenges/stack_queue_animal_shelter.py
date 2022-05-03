@@ -45,6 +45,4 @@ class Cat(Animal):
         self.pref = pref
 
 
-# set up two queues
-# dog queue, cat queue
-#
+

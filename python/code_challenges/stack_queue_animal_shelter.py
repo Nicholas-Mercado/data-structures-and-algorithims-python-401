@@ -7,23 +7,39 @@ class AnimalShelter:
         self.dog_queue = Queue()
         self.cat_queue = Queue()
 
-    def enqueue(self, name):
-        self.cat_queue.enqueue(name)
+    def enqueue(self, animal):
+        if animal.pref == "cat":
 
-    def dequeue(self, name):
-        # if self.name == "cat":
+            self.cat_queue.enqueue(animal)
+
+        if animal.pref == "dog":
+
+            self.dog_queue.enqueue(animal)
+
+    def dequeue(self, pref):
+        if pref == "cat":
 
             return self.cat_queue.dequeue()
 
-class Dog:
+        if pref == "dog":
 
-    def __init__(self, name="dog"):
+            return self.dog_queue.dequeue()
+        
+
+class Animal():
+
+    def __init__(self, name=None):
         self.name = name
 
-class Cat:
+class Dog(Animal):
 
-    def __init__(self, name="cat"):
-        self.name = name
+    def __init__(self, name=None, pref="dog"):
+        self.pref = pref
+
+class Cat(Animal):
+
+    def __init__(self, name=None, pref="cat"):
+        self.pref = pref
 
 
 # set up two queues

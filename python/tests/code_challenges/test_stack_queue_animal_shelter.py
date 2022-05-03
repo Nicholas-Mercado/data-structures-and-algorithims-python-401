@@ -47,7 +47,7 @@ def test_dog_then_cat():
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_bad_pref():
     shelter = AnimalShelter()
     cat = Cat()

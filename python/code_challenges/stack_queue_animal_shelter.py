@@ -1,3 +1,4 @@
+from distutils.log import error
 from data_structures.queue import Queue
 
 
@@ -24,7 +25,9 @@ class AnimalShelter:
         if pref == "dog":
 
             return self.dog_queue.dequeue()
-        
+
+        else:
+            return None
 
 class Animal():
 

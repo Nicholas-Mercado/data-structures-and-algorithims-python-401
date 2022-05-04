@@ -8,6 +8,16 @@ def test_validates_two_square_brackets():
     expected = True
     assert actual == expected
 
+def test_validates_two_square_brackets_with_stuff():
+    actual = multi_bracket_validation("[565464564645645gefsg]")
+    expected = True
+    assert actual == expected
+
+def test_validates_two_square_brackets_with_space():
+    actual = multi_bracket_validation("[     ]")
+    expected = True
+    assert actual == expected
+
 
 # @pytest.mark.skip("TODO")
 def test_fails_two_square_brackets_flipped():
@@ -15,29 +25,34 @@ def test_fails_two_square_brackets_flipped():
     expected = False
     assert actual == expected
 
+# @pytest.mark.skip("TODO")
+def test_validates_one_bad_brace():
+    actual = multi_bracket_validation("}")
+    expected = False
+    assert actual == expected
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_validates_two_braces():
     actual = multi_bracket_validation("{}")
     expected = True
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_fails_two_braces_flipped():
     actual = multi_bracket_validation("}{")
     expected = False
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_validates_two_parentheses():
     actual = multi_bracket_validation("()")
     expected = True
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_fails_two_parentheses_flipped():
     actual = multi_bracket_validation(")(")
     expected = False

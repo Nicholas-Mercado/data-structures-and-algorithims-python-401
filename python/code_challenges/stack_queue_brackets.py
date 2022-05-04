@@ -6,16 +6,18 @@ def multi_bracket_validation(string):
     stack = Stack()
 
     for char in string:
+        if char == ']' and stack.is_empty():
+            return False
+
         if char == '[':
             stack.push(']')
 
         if char == ']':
-            if stack.top:
-                if stack.top.value == char:
-                    stack.pop()
-                else:
-                    return False
-            
+            if stack.top.value == char:
+                stack.pop()
+            else:
+                return False
+
     return True
 
 

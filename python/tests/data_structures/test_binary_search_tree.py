@@ -73,14 +73,14 @@ def test_contains_first(tree):
     expected = True
     assert actual == expected
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_contains(tree):
     actual = tree.contains(15)
     expected = True
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_contains_deeper(tree):
     actual = tree.contains(5)
     expected = True

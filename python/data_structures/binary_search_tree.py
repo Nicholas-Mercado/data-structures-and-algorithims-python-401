@@ -19,6 +19,12 @@ class BinarySearchTree(BinaryTree):
                 else:
                     root.left = new_node
 
+            if new_node.value > root.value:
+                if root.right:
+                    climb(root.right, new_node)
+                else:
+                    root.right = new_node
+
         node = Node(value)
 
         if not self.root:

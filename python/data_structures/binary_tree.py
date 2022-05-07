@@ -49,6 +49,24 @@ class BinaryTree:
 
         return self.ordered_values
 
-    
+
+    def post_order(self):
+
+        def climb(root, values):
+
+            if not root:
+                return
+
+            climb(root.left, values)
+
+            climb(root.right, values)
+
+            values.append(root.value)
+
+        climb(self.root, self.ordered_values)
+
+        return self.ordered_values
+
+
 
 

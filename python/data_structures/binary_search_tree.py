@@ -7,8 +7,7 @@ class BinarySearchTree(BinaryTree):
     """
 
     def __init__(self):
-        # initialization here
-        pass
+        self.root = None
 
     def some_method(self):
         # method body here

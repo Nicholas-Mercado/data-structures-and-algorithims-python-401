@@ -4,13 +4,16 @@ class BinaryTree:
     """
 
     def __init__(self):
-        # initialization here
-        pass
+        self.root = None
 
-    def some_method(self):
-        # method body here
+
+    def pre_order(self, value):
+
         pass
 
 
 class Node:
-    pass
+  def __init__(self, value):
+    self.value = value
+    self.left = None
+    self.right = None

@@ -24,7 +24,7 @@ def test_add_to_empty():
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_add_left():
     tree = BinarySearchTree()
     tree.add(10)

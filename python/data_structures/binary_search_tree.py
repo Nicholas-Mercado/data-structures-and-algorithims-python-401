@@ -31,10 +31,23 @@ class BinarySearchTree(BinaryTree):
             self.root = node
             return
 
-
         climb(self.root, node)
 
+    def contains(self, target_value):
 
+        def climb(root, target_value):
 
+            if self.root.value == None:
+                return False
 
+            if self.root.value == target_value:
+                return True
+
+            elif self.root.value < target_value :
+                    climb(root.left, target_value)
+
+            else:
+                    climb(root.right, target_value)
+
+        return climb(self.root, target_value)
 

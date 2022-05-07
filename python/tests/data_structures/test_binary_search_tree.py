@@ -51,6 +51,27 @@ def test_add_deeper(tree):
     expected = 25
     assert actual == expected
 
+def test_add_deeper_left_left_right(tree):
+    tree.add(25)
+    tree.add(20)
+    tree.add(22)
+    actual = tree.root.right.right.left.right.value
+    expected = 22
+    assert actual == expected
+
+def test_add_deeper_100(tree):
+    tree.add(25)
+    tree.add(20)
+    tree.add(22)
+    tree.add(100)
+    actual = tree.root.right.right.right.value
+    expected = 100
+    assert actual == expected
+
+def test_contains_first(tree):
+    actual = tree.contains(10)
+    expected = True
+    assert actual == expected
 
 @pytest.mark.skip("TODO")
 def test_contains(tree):

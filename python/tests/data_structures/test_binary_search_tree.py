@@ -1,3 +1,4 @@
+from binascii import b2a_hqx
 import pytest
 from data_structures.binary_search_tree import BinarySearchTree
 
@@ -14,7 +15,7 @@ def test_instantiate_empty():
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_add_to_empty():
     tree = BinarySearchTree()
     tree.add("apples")

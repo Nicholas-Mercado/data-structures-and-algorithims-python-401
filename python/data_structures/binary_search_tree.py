@@ -1,4 +1,4 @@
-from data_structures.binary_tree import BinaryTree
+from data_structures.binary_tree import BinaryTree, Node
 
 
 class BinarySearchTree(BinaryTree):
@@ -6,9 +6,12 @@ class BinarySearchTree(BinaryTree):
     Put docstring here
     """
 
-    def __init__(self):
-        self.root = None
+    def add(self, value):
 
-    def some_method(self):
-        # method body here
-        pass
+        if not self.root:
+            self.root = Node(value)
+
+
+
+
+        

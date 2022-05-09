@@ -27,3 +27,13 @@ def test_max_val_deep():
     expected = 100
 
     assert actual == expected
+
+
+def test_max_val_10():
+    tree = BinaryTree()
+    tree.root = Node(10)
+    actual = tree.find_maximum_value()
+    expected = 10
+
+    assert actual == expected
+

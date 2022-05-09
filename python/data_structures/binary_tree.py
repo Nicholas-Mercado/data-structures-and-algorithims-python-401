@@ -13,6 +13,7 @@ class BinaryTree:
     def __init__(self):
         self.root = None
         self.ordered_values = []
+        self.max = 0
 
     def pre_order(self):
 
@@ -68,5 +69,20 @@ class BinaryTree:
         return self.ordered_values
 
 
+    def find_maximum_value(self):
 
+        def climb(root, values):
 
+            if not root:
+                return
+
+            if root.value > self.max:
+                self.max = root.value
+
+            climb(root.left, values)
+
+            climb(root.right, values)
+
+        climb(self.root, self.ordered_values)
+
+        return self.max

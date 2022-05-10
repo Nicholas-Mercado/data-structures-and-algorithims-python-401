@@ -31,16 +31,16 @@ def test_single_node():
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_add_two_nodes():
     tree = BinaryTree()
     tree.add("apples")
     tree.add("bananas")
-    assert tree._root.value == "apples"
-    assert tree._root.left.value == "bananas"
+    assert tree.root.value == "apples"
+    assert tree.root.left.value == "bananas"
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_two_nodes():
     tree = BinaryTree()
     tree.add("apples")

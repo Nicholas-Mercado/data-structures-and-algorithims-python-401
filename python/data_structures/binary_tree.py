@@ -1,3 +1,7 @@
+
+from data_structures.queue import Queue
+
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -86,3 +90,29 @@ class BinaryTree:
         climb(self.root, self.ordered_values)
 
         return self.max
+
+    def add(self, value):
+
+        node = Node(value)
+
+        if not self.root:
+            self.root = node
+            return
+
+        breadth = Queue()
+
+        breadth.enqueue(self.root)
+
+        while not breadth.is_empty():
+            front = breadth.dequeue()
+            if not front.left:
+                front.left = node
+                return
+            else:
+                breadth.enqueue(front.left)
+
+            if not front.right:
+                front.right = node
+                return
+            else:
+                breadth.enqueue(front.right)

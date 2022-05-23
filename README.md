@@ -35,3 +35,9 @@ To run your tests
 [stack queue animal shelter](python/docs/stack_queue_animal_shelter/README.md)
 
 [stack queue brackets](python/docs/stack_queue_brackets/README.md)
+
+[tree max](python/docs/tree_max/README.md)
+
+[tree fizz buzz](python/docs/tree_fizz_buzz/README.md)
+
+[tree breadth first](python/docs/tree_breadth_first/README.md)

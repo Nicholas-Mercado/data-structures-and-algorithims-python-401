@@ -43,3 +43,5 @@ To run your tests
 [tree breadth first](python/docs/tree_breadth_first/README.md)
 
 [Insertion Sort](sorting/insertion/README.md)
+
+[Merge sort](sorting/merge/README.md)

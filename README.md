@@ -41,3 +41,5 @@ To run your tests
 [tree fizz buzz](python/docs/tree_fizz_buzz/README.md)
 
 [tree breadth first](python/docs/tree_breadth_first/README.md)
+
+[Insertion Sort](sorting/insertion/README.md)

@@ -24,3 +24,9 @@ def test_insertion_sort_empty():
     actual = insertion_sort(arr)
     expected = []
     assert actual == expected
+
+def test_insertion_lots_off_zeros_and_a_one():
+    arr = [1,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    actual = insertion_sort(arr)
+    expected = [0,0,0,0,0,0,0,0,0,0,0,0,0,1]
+    assert actual == expected

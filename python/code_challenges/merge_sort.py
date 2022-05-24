@@ -10,7 +10,7 @@ def merge_sort(lst):
         merge_sort(left)
         merge_sort(right)
         merge(left, right, lst)
-
+    return lst
 
 def merge(left, right, lst):
     i = 0
@@ -26,3 +26,14 @@ def merge(left, right, lst):
             j += 1
 
         k += 1
+
+    # code help form JB
+    if i == len(left):
+        for x in range(j, len(right)):
+            lst[k] = right[x]
+            k += 1
+    else:
+        for x in range(i, len(left)):
+            lst[k] = left[x]
+            k += 1
+    return lst

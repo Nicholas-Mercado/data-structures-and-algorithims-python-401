@@ -11,5 +11,18 @@ def merge_sort(lst):
         merge_sort(right)
         merge(left, right, lst)
 
+
 def merge(left, right, lst):
-    pass
+    i = 0
+    j = 0
+    k = 0
+
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            lst[k] = left[i]
+            i += 1
+        else:
+            lst[k] = right[j]
+            j += 1
+
+        k += 1

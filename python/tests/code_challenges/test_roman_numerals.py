@@ -15,3 +15,21 @@ def test_only_add_2():
     actual = roman_numerals(roman)
     expected = 1601
     assert actual == expected
+
+def test_only_subtract_1():
+    roman = 'IV'
+    actual = roman_numerals(roman)
+    expected = 4
+    assert actual == expected
+
+def test_only_subtract_100():
+    roman = 'CM'
+    actual = roman_numerals(roman)
+    expected = 900
+    assert actual == expected
+
+def test_only_subtract_alot():
+    roman = 'MCMLXXIV'
+    actual = roman_numerals(roman)
+    expected = 1974
+    assert actual == expected

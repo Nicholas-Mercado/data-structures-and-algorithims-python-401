@@ -3,5 +3,9 @@ def roman_numerals(roman):
     sum = 0
     for i in range(len(roman)):
         value = numerals_values[roman[i]]
-        sum += value
+        # i + 1 < len(roman) keeps [roman[i + 1]] string index in range
+        if i + 1 < len(roman) and numerals_values[roman[i + 1]] > value:
+            sum -= value
+        else:
+            sum += value
     return sum

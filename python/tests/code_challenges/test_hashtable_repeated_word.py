@@ -58,7 +58,7 @@ def test_ignore_case_flipped():
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_punctuation():
     actual = first_repeated_word("apple? BANANA! banana, apple.")
     expected = "banana"

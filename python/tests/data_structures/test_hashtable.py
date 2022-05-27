@@ -15,6 +15,20 @@ def test_size_default():
     expected = 1024
     assert actual == expected
 
+def test_hash():
+    ht = Hashtable()
+    index = ht.hash("cat")
+    assert 0 <= index < ht.size
+
+def test_hash_02():
+    ht = Hashtable()
+    index = ht.hash("at")
+    assert 0 <= index < ht.size
+    
+@pytest.mark.skip("TODO")
+def test_set():
+    ht = Hashtable()
+    ht.set("color","blue")
 
 @pytest.mark.skip("TODO")
 def test_get_apple():

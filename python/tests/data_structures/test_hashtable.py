@@ -5,6 +5,16 @@ from data_structures.hashtable import Hashtable
 def test_exists():
     assert Hashtable
 
+def test_hash_create():
+    ht = Hashtable()
+    assert ht
+
+def test_size_default():
+    ht = Hashtable()
+    actual = ht.size
+    expected = 1024
+    assert actual == expected
+
 
 @pytest.mark.skip("TODO")
 def test_get_apple():

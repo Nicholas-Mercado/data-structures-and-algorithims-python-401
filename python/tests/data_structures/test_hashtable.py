@@ -24,11 +24,15 @@ def test_hash_02():
     ht = Hashtable()
     index = ht.hash("at")
     assert 0 <= index < ht.size
-    
-@pytest.mark.skip("TODO")
+
+# @pytest.mark.skip("TODO")
 def test_set():
     ht = Hashtable()
     ht.set("color","blue")
+    color_index = ht.hash("color")
+    actual = ht.buckets[color_index]
+    expected = ("color","blue")
+    assert actual.head.value == expected
 
 @pytest.mark.skip("TODO")
 def test_get_apple():

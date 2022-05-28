@@ -27,3 +27,19 @@ class Hashtable:
 
         bucket.insert((key, val))
 
+    def get(self, key):
+        index = self.hash(key)
+
+        bucket = self.buckets[index]
+
+        current = bucket.head
+
+        while current:
+            pair = current.value
+            current_key = pair[0]
+            if current_key == key:
+                return pair[1]
+
+            current = current.next
+
+        return None

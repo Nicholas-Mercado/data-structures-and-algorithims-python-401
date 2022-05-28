@@ -33,6 +33,23 @@ def test_set():
     actual = ht.buckets[color_index]
     expected = ("color","blue")
     assert actual.head.value == expected
+    
+def test_collisions():
+    ht = Hashtable()
+    ht.set("cat", "Josie")
+    ht.set("act", "A Contemporary Theater")
+    ht.set("tac", "Taco Tuesday")
+
+    assert ht.get("cat") == "Josie"
+    assert ht.get("act") == "A Contemporary Theater"
+    assert ht.get("tac") == "Taco Tuesday"
+
+def test_get():
+    ht = Hashtable()
+    ht.set("color","blue")
+    actual = ht.get("color")
+    expected = "blue"
+    assert actual == expected
 
 @pytest.mark.skip("TODO")
 def test_get_apple():

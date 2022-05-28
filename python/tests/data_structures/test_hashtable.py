@@ -1,3 +1,4 @@
+from operator import contains
 import pytest
 from data_structures.hashtable import Hashtable
 
@@ -25,7 +26,6 @@ def test_hash_02():
     index = ht.hash("at")
     assert 0 <= index < ht.size
 
-# @pytest.mark.skip("TODO")
 def test_set():
     ht = Hashtable()
     ht.set("color","blue")
@@ -33,7 +33,7 @@ def test_set():
     actual = ht.buckets[color_index]
     expected = ("color","blue")
     assert actual.head.value == expected
-    
+
 def test_collisions():
     ht = Hashtable()
     ht.set("cat", "Josie")
@@ -51,7 +51,7 @@ def test_get():
     expected = "blue"
     assert actual == expected
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_get_apple():
     hashtable = Hashtable()
     hashtable.set("apple", "Used for apple sauce")
@@ -59,6 +59,33 @@ def test_get_apple():
     expected = "Used for apple sauce"
     assert actual == expected
 
+def test_contains():
+    ht = Hashtable()
+    ht.set("color","blue")
+    ht.set("ahmad", 30)
+    ht.set("silent", True)
+    ht.set("listen", "to me")
+    actual = ht.contains("listen")
+    expected = True
+    assert actual == expected
+
+def test_contains_false():
+    ht = Hashtable()
+    ht.set("color","blue")
+    ht.set("ahmad", 30)
+    ht.set("silent", True)
+    ht.set("listen", "to me")
+    actual = ht.contains("Rick")
+    expected = False
+    assert actual == expected
+
+def test_contains_two_deep():
+    ht = Hashtable()
+    ht.set("cat","blue")
+    ht.set("tac", 30)
+    actual = ht.contains("tac")
+    expected = True
+    assert actual == expected
 
 @pytest.mark.skip("TODO")
 def test_internals():
@@ -70,7 +97,7 @@ def test_internals():
     actual = []
 
     # NOTE: purposely breaking encapsulation to test the "internals" of Hashmap
-    for item in hashtable._buckets:
+    for item in hashtable.buckets:
         if item:
             actual.append(item.display())
 

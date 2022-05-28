@@ -43,3 +43,22 @@ class Hashtable:
             current = current.next
 
         return None
+
+    def contains(self, key):
+        index = self.hash(key)
+        bucket = self.buckets[index]
+
+        if bucket is None:
+            return False
+        
+        current = bucket.head
+
+        while current:
+            pair = current.value
+            current_key = pair[0]
+            if current_key == key:
+                return True
+
+            current = current.next
+
+        return False

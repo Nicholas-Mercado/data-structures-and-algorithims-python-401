@@ -50,7 +50,7 @@ class Hashtable:
 
         if bucket is None:
             return False
-        
+
         current = bucket.head
 
         while current:
@@ -62,3 +62,13 @@ class Hashtable:
             current = current.next
 
         return False
+
+    def keys(self):
+        keys = []
+
+        for bucket in self.buckets:
+            if bucket:
+                keys.append(bucket.head.value[0])
+                print(bucket.head.value[0])
+        return keys
+

@@ -87,6 +87,30 @@ def test_contains_two_deep():
     expected = True
     assert actual == expected
 
+def test_contains_two_deep():
+    ht = Hashtable()
+    ht.set("cat","blue")
+    ht.set("tac", 30)
+    actual = ht.contains("tac")
+    expected = True
+    assert actual == expected
+
+def test_keys():
+    ht = Hashtable()
+    ht.set("color","blue")
+    ht.set("Other","blue")
+    actual = ht.keys()
+    expected = ["color","Other"]
+    assert actual == expected
+
+def test_keys_collisions():
+    ht = Hashtable()
+    ht.set("cat","blue")
+    ht.set("tac", 30)
+    actual = ht.keys()
+    expected = ["cat","tac"]
+    assert actual == expected
+
 @pytest.mark.skip("TODO")
 def test_internals():
     hashtable = Hashtable(1024)

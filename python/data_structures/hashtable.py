@@ -1,5 +1,6 @@
 from data_structures.linked_list import LinkedList
 
+
 class Hashtable:
     """
     Put docstring here
@@ -8,6 +9,7 @@ class Hashtable:
     def __init__(self, size=1024):
         self.size = size
         self.buckets = [None] * self.size
+
 
     def hash(self, key):
         hash_num = 0
@@ -64,11 +66,21 @@ class Hashtable:
         return False
 
     def keys(self):
-        keys = []
-
+        all_keys = []
         for bucket in self.buckets:
             if bucket:
-                keys.append(bucket.head.value[0])
-                print(bucket.head.value[0])
-        return keys
+                def climb(bucket):
+
+                    if not bucket.head:
+                        return
+
+                    all_keys.append(bucket.head.value[0])
+
+                    bucket.head = bucket.head.next
+                    return climb(bucket)
+
+                climb(bucket)
+        print(all_keys)
+        return all_keys
+
 

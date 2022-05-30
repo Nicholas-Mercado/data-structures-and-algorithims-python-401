@@ -108,23 +108,45 @@ def test_keys_collisions():
     ht.set("cat","blue")
     ht.set("tac", 30)
     actual = ht.keys()
-    expected = ["cat","tac"]
+    expected = ["tac","cat"]
     assert actual == expected
 
-@pytest.mark.skip("TODO")
-def test_internals():
-    hashtable = Hashtable(1024)
-    hashtable.set("ahmad", 30)
-    hashtable.set("silent", True)
-    hashtable.set("listen", "to me")
-
-    actual = []
-
-    # NOTE: purposely breaking encapsulation to test the "internals" of Hashmap
-    for item in hashtable.buckets:
-        if item:
-            actual.append(item.display())
-
-    expected = [[["silent", True], ["listen", "to me"]], [["ahmad", 30]]]
-
+def test_keys_collisions_deep():
+    ht = Hashtable()
+    ht.set("cats","blue")
+    ht.set("tacs", 10)
+    ht.set("ctas", 20)
+    ht.set("stac", 30)
+    ht.set("tsac", 40)
+    ht.set("tasc", 50)
+    actual = ht.keys()
+    expected = ["tasc","tsac","stac","ctas","tacs","cats"]
     assert actual == expected
+
+def test_keys_plus_collisions():
+    ht = Hashtable()
+    ht.set("color","blue")
+    ht.set("Other","blue")
+    ht.set("cats","blue")
+    ht.set("tacs", 10)
+    actual = ht.keys()
+    expected = ['color', 'Other', 'tacs', 'cats']
+    assert actual == expected
+
+# @pytest.mark.skip("TODO")
+# def test_internals():
+#     hashtable = Hashtable(1024)
+#     hashtable.set("ahmad", 30)
+#     hashtable.set("silent", True)
+#     hashtable.set("listen", "to me")
+
+#     actual = []
+
+#     # NOTE: purposely breaking encapsulation to test the "internals" of Hashmap
+#     for item in hashtable.buckets:
+#         if item:
+#             actual.append(item.display())
+
+#     expected = [[["silent", True], ["listen", "to me"]], [["ahmad", 30]]]
+
+#     assert actual == expected

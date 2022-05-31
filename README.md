@@ -22,8 +22,6 @@ To run your tests
 
 - Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
 
-
-
 ### Table of Contents
 
 [linked list insertion](python/docs/linked_list_insertions/README.md)
@@ -47,3 +45,5 @@ To run your tests
 [Merge sort](sorting/merge/README.md)
 
 [First Repeated Word](python/docs/hashtable_repeated_word/README.md)
+
+[Tree Intersection](python/docs/tree_intersection/README.md)

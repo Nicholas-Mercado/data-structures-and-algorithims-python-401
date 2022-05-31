@@ -1,33 +1,33 @@
 from operator import contains
 import pytest
-from data_structures.hashtable import Hashtable
+from data_structures.hashtable import Hashable
 
 
 def test_exists():
-    assert Hashtable
+    assert Hashable
 
 def test_hash_create():
-    ht = Hashtable()
+    ht = Hashable()
     assert ht
 
 def test_size_default():
-    ht = Hashtable()
+    ht = Hashable()
     actual = ht.size
     expected = 1024
     assert actual == expected
 
 def test_hash():
-    ht = Hashtable()
+    ht = Hashable()
     index = ht.hash("cat")
     assert 0 <= index < ht.size
 
 def test_hash_02():
-    ht = Hashtable()
+    ht = Hashable()
     index = ht.hash("at")
     assert 0 <= index < ht.size
 
 def test_set():
-    ht = Hashtable()
+    ht = Hashable()
     ht.set("color","blue")
     color_index = ht.hash("color")
     actual = ht.buckets[color_index]
@@ -35,7 +35,7 @@ def test_set():
     assert actual.head.value == expected
 
 def test_collisions():
-    ht = Hashtable()
+    ht = Hashable()
     ht.set("cat", "Josie")
     ht.set("act", "A Contemporary Theater")
     ht.set("tac", "Taco Tuesday")
@@ -45,7 +45,7 @@ def test_collisions():
     assert ht.get("tac") == "Taco Tuesday"
 
 def test_get():
-    ht = Hashtable()
+    ht = Hashable()
     ht.set("color","blue")
     actual = ht.get("color")
     expected = "blue"
@@ -53,14 +53,14 @@ def test_get():
 
 # @pytest.mark.skip("TODO")
 def test_get_apple():
-    hashtable = Hashtable()
+    hashtable = Hashable()
     hashtable.set("apple", "Used for apple sauce")
     actual = hashtable.get("apple")
     expected = "Used for apple sauce"
     assert actual == expected
 
 def test_contains():
-    ht = Hashtable()
+    ht = Hashable()
     ht.set("color","blue")
     ht.set("ahmad", 30)
     ht.set("silent", True)
@@ -70,7 +70,7 @@ def test_contains():
     assert actual == expected
 
 def test_contains_false():
-    ht = Hashtable()
+    ht = Hashable()
     ht.set("color","blue")
     ht.set("ahmad", 30)
     ht.set("silent", True)
@@ -80,7 +80,7 @@ def test_contains_false():
     assert actual == expected
 
 def test_contains_two_deep():
-    ht = Hashtable()
+    ht = Hashable()
     ht.set("cat","blue")
     ht.set("tac", 30)
     actual = ht.contains("tac")
@@ -88,7 +88,7 @@ def test_contains_two_deep():
     assert actual == expected
 
 def test_contains_two_deep():
-    ht = Hashtable()
+    ht = Hashable()
     ht.set("cat","blue")
     ht.set("tac", 30)
     actual = ht.contains("tac")
@@ -96,7 +96,7 @@ def test_contains_two_deep():
     assert actual == expected
 
 def test_keys():
-    ht = Hashtable()
+    ht = Hashable()
     ht.set("color","blue")
     ht.set("Other","blue")
     actual = ht.keys()
@@ -104,7 +104,7 @@ def test_keys():
     assert actual == expected
 
 def test_keys_collisions():
-    ht = Hashtable()
+    ht = Hashable()
     ht.set("cat","blue")
     ht.set("tac", 30)
     actual = ht.keys()
@@ -112,7 +112,7 @@ def test_keys_collisions():
     assert actual == expected
 
 def test_keys_collisions_deep():
-    ht = Hashtable()
+    ht = Hashable()
     ht.set("cats","blue")
     ht.set("tacs", 10)
     ht.set("ctas", 20)
@@ -124,7 +124,7 @@ def test_keys_collisions_deep():
     assert actual == expected
 
 def test_keys_plus_collisions():
-    ht = Hashtable()
+    ht = Hashable()
     ht.set("color","blue")
     ht.set("Other","blue")
     ht.set("cats","blue")

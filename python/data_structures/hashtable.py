@@ -1,7 +1,7 @@
 from data_structures.linked_list import LinkedList
 
 
-class Hashtable:
+class Hashable:
     """
     Put docstring here
     """
@@ -12,6 +12,7 @@ class Hashtable:
 
 
     def hash(self, key):
+        key = str(key)
         hash_num = 0
         for char in key:
             hash_num += ord(char)

@@ -6,7 +6,7 @@ def test_exists():
     assert left_join
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_example():
     synonyms = {
         "diligent": "employed",
@@ -24,11 +24,32 @@ def test_example():
     }
 
     expected = [
-        ["fond", "enamored", "averse"],
-        ["wrath", "anger", "delight"],
         ["diligent", "employed", "idle"],
-        ["outfit", "garb", "NONE"],
+        ["fond", "enamored", "averse"],
         ["guide", "usher", "follow"],
+        ["outfit", "garb", "NONE"],
+        ["wrath", "anger", "delight"],
+    ]
+
+    actual = left_join(synonyms, antonyms)
+
+    assert actual == expected
+
+
+def test_all_None():
+    synonyms = {
+        "diligent": "employed",
+        "fond": "enamored",
+    }
+    antonyms = {
+        "flow": "jam",
+        "wrath": "delight",
+
+    }
+
+    expected = [
+        ["diligent", "employed", "NONE"],
+        ["fond", "enamored", "NONE"],
     ]
 
     actual = left_join(synonyms, antonyms)

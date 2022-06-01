@@ -47,3 +47,5 @@ To run your tests
 [First Repeated Word](python/docs/hashtable_repeated_word/README.md)
 
 [Tree Intersection](python/docs/tree_intersection/README.md)
+
+[Hashtable Left Join](python/docs/hashtable_left_join/README.md)

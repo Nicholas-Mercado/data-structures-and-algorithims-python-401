@@ -49,3 +49,5 @@ To run your tests
 [Tree Intersection](python/docs/tree_intersection/README.md)
 
 [Hashtable Left Join](python/docs/hashtable_left_join/README.md)
+
+[Graph](python/docs/graph/README.md)

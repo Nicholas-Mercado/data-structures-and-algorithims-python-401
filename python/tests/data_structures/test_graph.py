@@ -43,6 +43,19 @@ def test_size():
 
     assert actual == expected
 
+def test_size_2():
+
+    graph = Graph()
+
+    graph.add_node("spam")
+    graph.add_node("not spam")
+
+    expected = 2
+
+    actual = graph.size()
+
+    assert actual == expected
+
 
 @pytest.mark.skip("TODO")
 def test_add_edge():
@@ -93,7 +106,7 @@ def test_add_edge_interloper_end():
         graph.add_edge(start, end)
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_get_nodes():
 
     graph = Graph()

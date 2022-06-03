@@ -14,6 +14,9 @@ class Graph:
     def size(self):
         return len(self._adjacency_list)
 
+    def get_nodes(self):
+        return self._adjacency_list.keys()
+
 
 class Vertex:
     def __init__(self, value):

@@ -17,6 +17,16 @@ def test_add_node():
 
     assert actual == expected
 
+def test_add_node_int_value():
+
+    graph = Graph()
+
+    expected = 0  # a vertex's value that comes back
+
+    actual = graph.add_node(0).value
+
+    assert actual == expected
+
 
 # @pytest.mark.skip("TODO")
 def test_size_empty():
@@ -67,6 +77,7 @@ def test_add_edge():
     assert len(neighbors) == 1
     assert neighbors[0].vertex.value == "banana"
     assert neighbors[0].weight == 5
+
 
 
 # @pytest.mark.skip("TODO")

@@ -3,22 +3,18 @@ class Graph:
 
     Methods:
 
-        add_node(self, value)
-        size(self)
-        get_nodes(self)
-        add_edge(self, start_vertex, end_vertex, weight=0)
-        get_neighbors(self, vertex)
-        
+        add_node(self, value) --> Add a node to the graph
+        size(self) --> Returns the total number of nodes in the graph
+        get_nodes(self) --> Returns all of the nodes in the graph as a collection
+        add_edge(self, start_vertex, end_vertex, weight=0) --> Adds a new edge between two nodes in the graph
+        get_neighbors(self, vertex) --> Returns a collection of edges connected to the given node
+
     '''
 
     def __init__(self):
         self._adjacency_list = {}
 
     def add_node(self, value):
-        ''' Adds node to graph returns vertex
-
-        Arg: value
-        '''
         vertex = Vertex(value)
         self._adjacency_list[vertex] = []
         return vertex
@@ -28,12 +24,6 @@ class Graph:
         return len(self._adjacency_list)
 
     def get_nodes(self):
-        """
-        Description of get_nodes
-
-        Args: None
-
-        """
         return self._adjacency_list.keys()
 
     def add_edge(self, start_vertex, end_vertex, weight=0):
@@ -47,7 +37,6 @@ class Graph:
     def get_neighbors(self, vertex):
         return self._adjacency_list[vertex]
 
-print(Graph.__doc__)
 
 class Vertex:
     def __init__(self, value):
@@ -58,5 +47,3 @@ class Edge:
     def __init__(self, vertex, weight):
         self.vertex = vertex
         self.weight = weight
-
-

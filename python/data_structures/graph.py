@@ -27,6 +27,7 @@ class Graph:
         return self._adjacency_list.keys()
 
     def add_edge(self, start_vertex, end_vertex, weight=0):
+        
         if start_vertex not in self._adjacency_list or end_vertex not in self._adjacency_list:
             raise KeyError()
 
@@ -36,6 +37,9 @@ class Graph:
 
     def get_neighbors(self, vertex):
         return self._adjacency_list[vertex]
+
+    def breadth_first(self, root):
+        pass
 
 
 class Vertex:

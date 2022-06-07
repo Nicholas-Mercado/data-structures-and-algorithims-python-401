@@ -9,9 +9,8 @@ def test_exists():
 # @pytest.mark.skip("TODO")
 def test_bfs(graph):
     nodes = graph.get_nodes()
-    print(nodes)
     root = list(nodes)[0]
-    print(root.value)
+    # print(root.value)
     actual = graph.breadth_first(root)
     expected = ["Pandora", "Arendelle", "Metroville", "Monstropolis", "Narnia", "Naboo"]
     assert actual == expected

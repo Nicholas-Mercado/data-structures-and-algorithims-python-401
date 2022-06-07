@@ -1,3 +1,5 @@
+from data_structures.queue import Queue
+
 class Graph:
     '''Implement Graph data structure with following methods
 
@@ -27,7 +29,7 @@ class Graph:
         return self._adjacency_list.keys()
 
     def add_edge(self, start_vertex, end_vertex, weight=0):
-        
+
         if start_vertex not in self._adjacency_list or end_vertex not in self._adjacency_list:
             raise KeyError()
 
@@ -38,8 +40,24 @@ class Graph:
     def get_neighbors(self, vertex):
         return self._adjacency_list[vertex]
 
-    def breadth_first(self, root):
-        pass
+    def breadth_first(self, node):
+
+        bfs_values =[]
+        queue = Queue()
+        visited = set()
+        queue.enqueue(node)
+
+        while queue:
+            node = queue.dequeue()
+            bfs_values.append(node.value)
+
+            for neighbor in self.get_neighbors(node):
+                if neighbor.node is visited:
+                    visited.add(neighbor.node)
+                    queue.enqueue(neighbor.node)
+        return bfs_values
+
+
 
 
 class Vertex:

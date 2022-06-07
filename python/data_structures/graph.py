@@ -40,21 +40,22 @@ class Graph:
     def get_neighbors(self, vertex):
         return self._adjacency_list[vertex]
 
-    def breadth_first(self, node):
+    def breadth_first(self, vertex):
 
         bfs_values =[]
         queue = Queue()
         visited = set()
-        queue.enqueue(node)
+        queue.enqueue(vertex)
+        visited.add(vertex)
 
-        while queue:
-            node = queue.dequeue()
-            bfs_values.append(node.value)
+        while not queue.is_empty():
+            vertex = queue.dequeue()
+            bfs_values.append(vertex.value)
 
-            for neighbor in self.get_neighbors(node):
-                if neighbor.node is visited:
-                    visited.add(neighbor.node)
-                    queue.enqueue(neighbor.node)
+            for neighbor in self.get_neighbors(vertex):
+                if neighbor.vertex not in visited:
+                    visited.add(neighbor.vertex)
+                    queue.enqueue(neighbor.vertex)
         return bfs_values
 
 

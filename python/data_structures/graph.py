@@ -53,7 +53,7 @@ class Graph:
             bfs_values.append(vertex.value)
 
             for neighbor in self.get_neighbors(vertex):
-                if neighbor.vertex not in visited:
+                if neighbor.vertex not visited:
                     visited.add(neighbor.vertex)
                     queue.enqueue(neighbor.vertex)
         return bfs_values
